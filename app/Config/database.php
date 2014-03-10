@@ -64,7 +64,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
-		'host' => 'localhost',
+		'host' => '127.7.234.2',
 		'login' => 'adminRFk1dV9',
 		'password' => 'gPnusmCc_alW',
 		'database' => 'thukhoa_new',
