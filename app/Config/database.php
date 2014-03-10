@@ -67,7 +67,7 @@ class DATABASE_CONFIG {
 		'host' => '127.7.234.2',
 		'login' => 'adminRFk1dV9',
 		'password' => 'gPnusmCc_alW',
-		'database' => 'thukhoa_new',
+		'database' => 'thukhoa',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);
