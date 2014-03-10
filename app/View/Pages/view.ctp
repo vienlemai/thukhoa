@@ -1,0 +1,1 @@
+<h1>Noi dung trang gioi thieu ve <?php echo $page['Page']['title'] ?></h1>
