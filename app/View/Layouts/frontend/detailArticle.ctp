@@ -1,69 +1,79 @@
-<!DOCTYPE html>
-<?php echo $this->Facebook->html(); ?>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><?php echo $title_for_layout ?></title>
-		<link rel="shortcut icon" href="<?php echo $this->Html->webroot('img/favicon.ico') ?>" type="image/x-icon">
-		<link rel="icon" href="<?php echo $this->Html->webroot('img/favicon.ico') ?>" type="image/x-icon">
-		<?php
-		echo $this->Html->css(array(
-			'vendor/bootstrap.min',
-			'style',
-		));
-		echo $this->fetch('headerCss');
-		echo $this->Html->script(array(
-			'vendor/jquery-1.10.2.min',
-		));
+<!DOCTYPE HTML>
+<!--
+	Helios 1.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title><?php echo $title_for_layout ?></title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="<?php echo $this->Html->webroot('/js/frontend/jquery.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/jquery.dropotron.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/skel.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/skel-panels.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/init.js') ?>"></script>
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/skel-noscript.css') ?>" />
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/style.css') ?>" />
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/style-desktop.css') ?>" />
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/style-noscript.css') ?>" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+	<body class="right-sidebar">
 
-		?>
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-          <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <div class="container" id="main-wrap">
-            <div class="row">
-				<?php
-				echo $this->element('frontend/banner');
+		<!-- Header -->
+		<div id="header">
 
-				?>
-                <!--<begin navbar>-->
-				<?php
-				echo $this->element('frontend/navbar',array('menus'=>$menus));
+			<!-- Nav -->
+			<?php echo $this->element('frontend/navbar') ?>
 
-				?>
-                <!--<end navbar>-->
-                <div id="content">
-                    <div id="content-bottom">
-                        <div class="col-lg-9">
-                            <div class="row column-left">
-                                <div class="panel panel-primary" id="tab-content">
-                                    <div class="panel-body" id="layout-content">
-                                        <!--<begin information>-->
-										<?php
-										echo $this->fetch('content');
+		</div>
 
-										?>
-                                        <!--<end information>-->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-						<?php echo $this->element('frontend/right_sidebar_facebook') ?>
-                    </div>
+		<div class="wrapper style1">
 
-                </div>
-                <div style="clear: both"></div>
-                <?php echo $this->element('frontend/footer'); ?>
-            </div>
-        </div> <!-- .container -->
-		<?php
-		echo $this->fetch('scriptBottom');
+			<div class="container">
+				<?php echo $this->fetch('content') ?>			
+			</div>
 
-		?>
-    </body>
-	 <?php echo $this->Facebook->init(); ?>
+		</div>
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
+
+						<!-- Contact -->
+						<section class="contact">
+							<header>
+								<h3>Nisl turpis nascetur interdum?</h3>
+							</header>
+							<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+							<ul class="icons">
+								<li><a href="#" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+								<li><a href="#" class="fa fa-facebook solo"><span>Facebook</span></a></li>
+								<li><a href="#" class="fa fa-google-plus solo"><span>Google+</span></a></li>
+								<li><a href="#" class="fa fa-pinterest solo"><span>Pinterest</span></a></li>
+								<li><a href="#" class="fa fa-dribbble solo"><span>Dribbble</span></a></li>
+								<li><a href="#" class="fa fa-linkedin solo"><span>Linkedin</span></a></li>
+							</ul>
+						</section>
+
+						<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved.</li>
+								<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

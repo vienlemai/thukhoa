@@ -1,112 +1,91 @@
-<!DOCTYPE html>
-<?php echo $this->Facebook->html(); ?>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-	<link rel="shortcut icon" href="<?php echo $this->Html->webroot('img/favicon.ico') ?>" type="image/x-icon">
-	<link rel="icon" href="<?php echo $this->Html->webroot('img/favicon.ico') ?>" type="image/x-icon">
-	<title><?php echo $title_for_layout ?></title>
-	<?php
-	echo $this->Html->css(array(
-		'vendor/bootstrap.min',
-		'style',
-	));
+<!DOCTYPE HTML>
+<!--
+	Helios 1.5 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title><?php echo $title_for_layout ?></title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="<?php echo $this->Html->webroot('/js/frontend/jquery.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/jquery.dropotron.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/skel.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/skel-panels.min.js') ?>"></script>
+		<script src="<?php echo $this->Html->webroot('/js/frontend/init.js') ?>"></script>
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/skel-noscript.css') ?>" />
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/style.css') ?>" />
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/style-desktop.css') ?>" />
+		<link rel="stylesheet" href="<?php echo $this->Html->webroot('/css/frontend/style-noscript.css') ?>" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
 
-	?>
-	<?php
-	echo $this->Html->script(array(
-		'vendor/jquery-1.10.2.min'
-	))
+		<!-- Header -->
+		<div id="header">
 
-	?>
-	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-	<![endif]-->
-</head>
-<body>
-	<div class="container" id="main-wrap">
-		<div class="row" id="content-wrapper">
-			<?php
-			echo $this->element('frontend/banner');
-
-			?>
-			<!--<begin navbar>-->
-			<?php
-			echo $this->element('frontend/navbar',array('menus'=>$menus));
-
-			?>
-			<!--<end navbar>-->
-			<div id="content">
-				<div id="content-top">
-					<div class="col-lg-9">
-						<!--<begin slider>-->
-						<?php
-						echo $this->element('frontend/slider');
-
-						?>
-						<!--<end slider>-->
-					</div>
-					<div class="col-lg-3">
-						<div class="row column-right">
-							<div style="clear: both"></div>
-							<div class="panel panel-primary" id="portal-links">
-								<div class="panel-heading">
-									Kết nối với chúng tôi
-								</div>
-								<div class="panel-body" >
-									<?php echo $this->Facebook->likebox('https://www.facebook.com/thukhoa.vn', array('width' => '255px')); ?>
-								</div>
-							</div> 
-
-						</div>
-					</div>
-
-					<div style="clear:both"> </div>
-					<div id="content-bottom">
-						<div class="col-lg-9">
-							<div class="row column-left">
-								<div class="panel panel-primary" id="tab-content">
-									<div class="panel-heading">
-										<ul class="nav nav-tabs">
-											<li class="active"><a href="#tabs-news-content" id="tab-news" data-toggle="tab">Tin tức chung</a></li>
-										<li><a href="#tabs-custom" data-toggle="tab">Học cùng thủ khoa</a></li>
-										<!--		<li><a href="#tab-confidential-content" id="tab-confidential" data-toggle="tab">Tâm sự thầy trò</a></li>-->
-										</ul>
-									</div>
-									<div class="panel-body" style="">
-										<!--<begin information>-->
-										<?php
-										echo $this->fetch('content');
-
-										?>
-										<!--<end information>-->
-									</div>
-								</div>
-							</div>
-						</div>
-						<?php echo $this->element('frontend/right_sidebar') ?>
-					</div>
-				</div>
-
+			<!-- Inner -->
+			<div class="inner">
+				<header>
+					<h1><a href="#" id="logo">HỌC CÙNG THỦ KHOA</a></h1>
+					<hr />
+					<span class="byline">Slogan comes here</span>
+				</header>
+				<footer>
+					<a href="#banner" class="button circled scrolly">Bắt đầu</a>
+				</footer>
 			</div>
-			<div style="clear: both"></div>
-			<?php echo $this->element('frontend/footer'); ?>
+
+			<!-- Nav -->
+			<?php echo $this->element('frontend/navbar') ?>
+
 		</div>
-	</div> <!-- .container -->
-	<?php
-	echo $this->Html->script(array(
-		'vendor/bootstrap.min',
-	));
-	echo $this->fetch('scriptBottom');
 
-	?>
-	<script type="text/javascript">
-		$('.carousel').carousel();
-	</script>
+		<!-- Banner -->
+		<div id="banner">
+			<h2>Chào mừng đến với <strong>Thukhoa.vn</strong></h2>
+			<span class="byline">
+				<img src="<?php echo $this->Html->webroot('/img/frontend/thukhoabanner.jpg') ?>"/>
+			</span>
+		</div>
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="12u">
 
-</body>
-<?php echo $this->Facebook->init(); ?>
+						<!-- Contact -->
+						<section class="contact">
+							<header>
+								<h3>Nisl turpis nascetur interdum?</h3>
+							</header>
+							<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
+							<ul class="icons">
+								<li><a href="#" class="fa fa-twitter solo"><span>Twitter</span></a></li>
+								<li><a href="#" class="fa fa-facebook solo"><span>Facebook</span></a></li>
+								<li><a href="#" class="fa fa-google-plus solo"><span>Google+</span></a></li>
+								<li><a href="#" class="fa fa-pinterest solo"><span>Pinterest</span></a></li>
+								<li><a href="#" class="fa fa-dribbble solo"><span>Dribbble</span></a></li>
+								<li><a href="#" class="fa fa-linkedin solo"><span>Linkedin</span></a></li>
+							</ul>
+						</section>
+
+						<!-- Copyright -->
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; Untitled. All rights reserved.</li>
+								<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
 </html>

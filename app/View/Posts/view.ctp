@@ -1,55 +1,47 @@
-<ol class="breadcrumb">
-	<li><?php echo $this->Html->link('Trang chủ', '/'); ?></li>
-	<?php if (!empty($category['ParentCategory']['name'])): ?>
-		<li><?php echo $category['ParentCategory']['name'] ?></li>
-	<?php endif ?>
-	<li><?php
-		echo $this->Html->link($category['Category']['name'], array(
-			'controller' => 'posts',
-			'action' => 'posts',
-			'id' => $category['Category']['id'],
-			'slug' => $category['Category']['alias'],
-		));
+<div class="row">
+	<div class="8u skel-cell-important" id="content">
+		<article id="main">
+			<header>
+				<h2><a href="#"><?php echo $article['Post']['title'] ?></a></h2>
+			</header>
+			<?php if (!empty($article['Post']['thumbnail'])): ?>
+				<a href="#" class="image featured"><img src="<?php echo $article['Post']['thumbnail'] ?>" alt="" /></a>
+			<?php endif; ?>
+			<?php echo $article['Post']['sumary'] ?>
+			<br/>
+			<?php echo $article['Post']['content'] ?>
 
-		?>
-	</li>
-	<li><?php echo $article['Post']['title'] ?></li>
-</ol>
-<span class="spanTime">Ngày Đăng:
-	<?php
-	$date = new DateTime($article['Post']['modified']);
-	echo ' ' . $date->format('d-m-Y');
 
-	?>
-</span>
-<h3 class="text-center"><?php echo $article['Post']['title'] ?></h3>
-<p>
-	<?php
-	echo $article['Post']['content'];
+		</article>
+	</div>
+	<div class="4u" id="sidebar">
+		<?php if (!empty($otherArticle)): ?>
+			<section>
+				<header>
+					<h3><a href="#">Có thể bạn quan tâm</a></h3>
+				</header>
+				<?php foreach ($otherArticle as $row): ?>
+					<div class="row half no-collapse">
+						<div class="4u">
+							<?php
+							echo $this->Html->link($this->Html->image($row['Post']['thumbnail']), array(
+								'controller' => 'posts',
+								'action' => 'view',
+								'id' => $row['Post']['id'],
+								'slug' => $row['Post']['alias']
+									), array(
+								'escape' => false,
+								'class' => 'image full'
+							));
 
-	?>
-</p>
-<p class="pull-right" style="font-weight: bold">
-    Người đăng: <?php echo ' ' . $article['User']['first_name'] ?>
-</p>
-<?php echo $this->Facebook->comments(array('width'=>'850px')); ?>
-<br>
-<div>
-	<?php if (!empty($otherArticle)): ?>
-		<h4 class="pull-left">Các tin khác:</h4>
-	    <div class="clearfix"></div>
-		<?php $i = 1; ?>
-		<?php foreach ($otherArticle as $row): ?>
-			<div class="col-lg-12">
-				<?php
-				echo '&bull;&nbsp;' . $this->Html->link($row['Post']['title'], array(
-					'controller' => 'posts',
-					'action' => 'view',
-					'id' => $row['Post']['id'],
-					'slug' => $row['Post']['alias']), array('escape' => false));
-
-				?>
-			</div>
-		<?php endforeach; ?>
-	<?php endif; ?>
-</div>
+							?>
+						</div>
+						<div class="8u">
+							<h4><?php echo $row['Post']['title']; ?></h4>
+						</div>
+					</div>
+				<?php endforeach; ?>
+			</section>
+		<?php endif; ?>
+	</div>
+</div>	
